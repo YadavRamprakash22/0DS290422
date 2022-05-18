@@ -1,7 +1,10 @@
-import string
 str=input("Enter a String:")
-invalidcharacters= set(string.punctuation)
-if any(char in invalidcharacters for char in str):
-    print ("invalid")
+for i in str:
+    if(i=='@' or i=='#' or i=='$' or i=='%' or i=='^' or i=='&' ):
+        flag=True
+    else:
+        flag=False
+if flag:
+    print("string is not accepted")
 else:
-    print("valid")
+    print("string is accepted")
