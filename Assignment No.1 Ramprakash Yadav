@@ -1,0 +1,208 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "dc235bc2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "335ce300",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([0., 0., 0., 0., 1., 0., 0., 0., 0., 0.])"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Create a null vector of size 10 but the fifth value which is 1.\n",
+    "data=np.zeros(10)\n",
+    "data[4]=1\n",
+    "data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "ee75e4a1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,\n",
+       "       27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43,\n",
+       "       44, 45, 46, 47, 48, 49])"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Create a vector with values ranging from 10 to 49.\n",
+    "data=np.arange(10,50)\n",
+    "data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "d711a031",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[0, 1, 2],\n",
+       "       [3, 4, 5],\n",
+       "       [6, 7, 8]])"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Create a 3x3 matrix with values ranging from 0 to 8\n",
+    "mat=np.arange(0,9)\n",
+    "mat.reshape(3,3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "3645f3b1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(array([0, 1, 4], dtype=int64),)"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Find indices of non-zero elements from [1,2,0,0,4,0]\n",
+    "data=[1,2,0,0,4,0]\n",
+    "np.nonzero(data)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "75ceaaa1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[0.06980575 0.43528922 0.93037785 0.85776233 0.7339801  0.92822681\n",
+      "  0.11875763 0.19808442 0.34675426 0.40094522]\n",
+      " [0.54801807 0.43747349 0.36704497 0.87100862 0.21442416 0.50494001\n",
+      "  0.86642716 0.94281681 0.13871017 0.4590413 ]\n",
+      " [0.4908043  0.32628859 0.36415367 0.61918102 0.26814607 0.25989267\n",
+      "  0.19027139 0.18655433 0.93174238 0.35650794]\n",
+      " [0.86997928 0.22286465 0.39966026 0.55757174 0.57907183 0.84665455\n",
+      "  0.77483406 0.7713493  0.42028945 0.67422536]\n",
+      " [0.46130366 0.5250827  0.13017363 0.58034614 0.99005705 0.46458294\n",
+      "  0.60263719 0.23886031 0.28098449 0.19199801]\n",
+      " [0.53824318 0.49985958 0.50726911 0.44563993 0.09450008 0.13812022\n",
+      "  0.76770415 0.7972856  0.31736549 0.97491903]\n",
+      " [0.75330623 0.25898436 0.63647554 0.90527357 0.48263927 0.96004599\n",
+      "  0.86657085 0.69147872 0.19867744 0.54482605]\n",
+      " [0.35528467 0.31030852 0.66414233 0.76328087 0.3015092  0.22215278\n",
+      "  0.42164061 0.75707326 0.39295129 0.42760314]\n",
+      " [0.73641052 0.32678511 0.29237959 0.38638984 0.23131748 0.89108189\n",
+      "  0.2316126  0.51971619 0.99368386 0.6835913 ]\n",
+      " [0.79001845 0.27993285 0.1487552  0.12590918 0.50724585 0.43295519\n",
+      "  0.92660243 0.48184191 0.24817562 0.10366918]]\n",
+      "minimum value: 0.06980574777626092\n",
+      "maximum value: 0.9936838621305674\n"
+     ]
+    }
+   ],
+   "source": [
+    "mat=np.random.random((10,10))\n",
+    "print(mat)\n",
+    "print(\"minimum value:\",mat.min())\n",
+    "print(\"maximum value:\",mat.max())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "4a7dfb52",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0.76256768 0.88412479 0.55632499 0.16615042 0.02481108 0.39733375\n",
+      " 0.20424706 0.78977346 0.19039397 0.23950034 0.88342401 0.79804637\n",
+      " 0.49338178 0.31218062 0.46931125 0.22455558 0.36088342 0.92655516\n",
+      " 0.49449346 0.07874146 0.96384929 0.84750111 0.5434777  0.98346538\n",
+      " 0.49327761 0.27690678 0.91434125 0.92060012 0.16726443 0.3856465 ]\n",
+      "Mean value: 0.5251043614513623\n"
+     ]
+    }
+   ],
+   "source": [
+    "mat=np.random.random(30)\n",
+    "print(mat)\n",
+    "print(\"Mean value:\",mat.mean())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a8e1c5a1",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
